@@ -1,0 +1,8 @@
+name: ${COMPOSE_PROJECT_NAME:-inventory-frontend}
+
+services:
+  frontend:
+    image: ${IMAGE_NAME:-inventory-frontend}:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8084}:80"
